@@ -11,10 +11,13 @@ color:red;
 }
 </style>
 
+
+<!--action="SaveRegistration" method="post" modelAttribute="login"-->
+
 </head>
 <body>
 <h3 align="center">New Registration</h3>
-	<form:form action="SaveRegistration" method="post" modelAttribute="login" >
+	<form:form>
             <div>
             <table align="center">
                 <form:hidden path="id"/>

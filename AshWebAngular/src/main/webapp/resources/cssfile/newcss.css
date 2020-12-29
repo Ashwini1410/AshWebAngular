@@ -1,7 +1,13 @@
 body{
     font-family: Arial;
-    color: white;
+    color: blue;
+    background-color: #111;
+ }
+
+h1{
+    color:red;
 }
+
 .split{
     height: 100%;
     width:50%;

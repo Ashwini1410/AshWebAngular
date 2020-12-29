@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.jwt.model.Employee;
 import com.jwt.service.EmployeeService;
+import org.springframework.ui.ModelMap;
 
 @Controller
 public class EmployeeController {
@@ -27,12 +28,18 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
+        
+        @RequestMapping(value = "/r")
+	public String welcome(ModelMap model) {
+            model.addAttribute("message", "Programmer Gate");
+            return "/javascriptpage";
+        }
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/a")
 	public ModelAndView listEmployee(ModelAndView model) throws IOException {
 		List<Employee> listEmployee = employeeService.getAllEmployees();
 		model.addObject("listEmployee", listEmployee);
-		model.setViewName("home");
+		model.setViewName("javascriptpage");
 		return model;
 	}
 
